@@ -10,10 +10,10 @@ class Settings(BaseSettings):
         "http://127.0.0.1:5173",
         "http://localhost:3800"
     ]
-    static_dir: str = "static"
-    images_dir: str = "static/images"
+    static_dir: str = "backend/static"
+    images_dir: str = "backend/static/images"
 
     class Config:
-        env_file = "venv"
+        env_file = ".env"
 
 settings = Settings()

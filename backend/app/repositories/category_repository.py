@@ -10,11 +10,11 @@ class CategoryRepository:
     def get_all(self) -> List[Category]:
         return self.db.query(Category).all()
     
-    def get_by_id(self, category_id: int) -> Optional[Category]:
-        return self.db.query(Category).filter(Category.id == category_id).first
+    def get_by_id(self, category_id: int):
+        return self.db.query(Category).filter(Category.id == category_id).first()
     
     def get_by_slug(self, slug: str) -> Optional[Category]:
-        return self.db.query(Category).filter(Category.slug == slug).first
+        return self.db.query(Category).filter(Category.slug == slug).first()
     
     def create(self, category_data: CategoryCreate) -> Category:
         db_category = Category(**category_data.model_dump())
